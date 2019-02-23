@@ -33,11 +33,7 @@ class CommentBox extends Component {
           name="comment"
           value={this.state.comment}
         />
-        <textarea
-          onChange={this.handleInput}
-          name="second"
-          value={this.state.second}
-        />
+  
         <div>
           <button>ADD</button>
         </div>
