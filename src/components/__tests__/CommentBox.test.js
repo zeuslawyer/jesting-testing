@@ -35,18 +35,19 @@ describe("tests the CommentBox and Its Children", () => {
   it("has a text areas that users can type into ", () => {
     let fakeEventObject = {
       target: {
+        //object must include ALL the props that we have added to the target
         name: "comment",
         value: "This is the test comment"
       }
     };
 
-    const textareas = wrapped.find("textarea");
+    let textareas = wrapped.find("textarea");
     textareas.simulate("change", fakeEventObject);
     textareas.update();
 
     // can no longer reference textareas as it is 'stale' -> need a fresh reference to the component for assertion
-    expect(wrapped.find("textarea").prop("value")).toEqual(
-      "This is the test comment"
-    );
+    textareas = wrapped.find("textarea");
+    expect(textareas.prop("value")).toEqual("This is the test comment");
+    // expect(wrapped.find("textarea").prop("value")).toEqual("This is the test comment");
   });
 });
