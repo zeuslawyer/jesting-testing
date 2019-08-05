@@ -1,5 +1,6 @@
+// @ts-nocheck
+
 import React from "react";
-import ReactDOM from "react-dom";
 import { shallow } from "enzyme";
 import App from "../App";
 import CommentBox from "../CommentBox";
@@ -21,3 +22,5 @@ it("shows a comment box  ", () => {
 it("shows the comment list ", () => {
   expect(wrapped.find(CommentList).length).toEqual(1);
 });
+
+

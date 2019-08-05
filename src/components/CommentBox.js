@@ -10,7 +10,7 @@ class CommentBox extends Component {
   }
 
   handleInput = event => {
-    event.persist();
+    // event.persist();
     this.setState({ [event.target.name]: event.target.value }, () => {
       console.log(" state:  ", this.state);
     });
